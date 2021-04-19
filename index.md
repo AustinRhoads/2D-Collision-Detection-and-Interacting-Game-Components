@@ -1,4 +1,4 @@
-#**2D Collision Detection and Interacting Game Components**
+# **2D Collision Detection and Interacting Game Components**
 
 I wanted to make a game that would operate and feel like Super Mario World out of JavaScript. The physics and movement of the characters on the screen in these games are simple and elegant. 
 The most basic way to approach this type of 2d collision detection is to utilize a concept known as Axis-aligned bounding box. 
@@ -19,7 +19,7 @@ We then compare X and Y positions along with width and height to see if they are
 
 [Mario polygons image]
 
-##**Game Components**
+## **Game Components**
 
 My project was a simple tile-based 2d platform game consisting of the player object, a 32 by 32 pixel red square named “Cubio”, three types of “baddies” and the tile map of the game’s world. 
 
@@ -79,16 +79,16 @@ In these different tile collide functions you can see the older position of the 
 You can imagine now that when writing a baddy_collision_detection() function it would be very similar to this only we can modify collide_top() to kill the baddy and all other collides to kill the player on contact.
 
 
-##**Efficiency**
+## **Efficiency**
 
 Once all of you tiles, coins and baddies are interacting with you player correctly you’ll notice that running a collision test on every coin and every baddy at every cycle of you engine loop is very costly and unnecessary. This is where you separate the process of test for collision into two phases, broad and narrow.
 
 
-###**Broad**
+### **Broad**
 
 Create an array of near objects that may need to be tested. Here we are only checking the object’s x position when we iterate through entire list which is a lot less costly than running the entire collision test on each one.
 
-###**Narrow**
+### **Narrow**
 
 Once a much smaller list of near objects is created we then iterate over each testing for collision and/or run appropriate blocks of code.
 
