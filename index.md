@@ -98,58 +98,6 @@ const  DEFAULT_MAP = [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 ![Image](collide_function.png)
 ![Image](collide.png)
 
-```
-  
-function collision_detection(game, player){
-
-    var top, left, bottom, right, val
- 
- 
-    top = Math.floor(player.getTop() / tile_size);
-    left = Math.floor(player.getLeft() / tile_size);
-    val = game.map[top * game.columns + left]
-    collide(val, player, left * tile_size, top * tile_size, tile_size);
- 
- 
-    top = Math.floor(player.getTop() / tile_size);
-    right = Math.floor(player.getRight() / tile_size);
-    val = game.map[top * game.columns + right]
-    collide(val, player, right * tile_size, top * tile_size, tile_size)
-    
-    bottom = Math.floor(player.getBottom() / tile_size);
-    left = Math.floor(player.getLeft() / tile_size);
-    val = game.map[bottom * game.columns + left]
-    collide(val, player, left * tile_size, bottom * tile_size, tile_size)
-    
-    bottom = Math.floor(player.getBottom() / tile_size);
-    right = Math.floor(player.getRight() / tile_size);
-    val = game.map[bottom * game.columns + right]     
-    collide(val, player, right * tile_size, bottom * tile_size, tile_size)
- }
- 
-                                                  
-   function collide(val, player, tile_x, tile_y, tile_size){
-     
-     switch(val){
-       case 0://sky      
-       break;
-       case 1: if(collideTop   (player, tile_y             )); break; //earth
-       case 2: if(collideTop   (player, tile_y             )) return; //crate
-               if(collideLeft  (player, tile_x             )) return;
-               if(collideRight (player, tile_x + tile_size )) return;
-                  collideBottom(player, tile_y + tile_size  ); break;
-                  
-       case 3: if(collideTop   (player, tile_y             )); break; //sky_island
-
-                                                                          
- 
-   } 
-
- }
-
-```
-
-
 
 The collide() function uses a switch statement to select the appropriate block of code to run depending on the tile type. As you can see type “0” (sky) has no effect and type “2” (crate) collides with all four sides. In case your are wondering why I’ve defined these points twice in collision_detection(), it’s because each time I call collide() it has the potential to move the player. So every point has to be redefined each time after I call collide(). 
 
@@ -161,7 +109,33 @@ The collide() function uses a switch statement to select the appropriate block o
 In these different tile collide functions you can see the older position of the player is compared to the tile as well. This allows you to establish the direction the player is going. The function needs to know what direction the player is going in order to have the correct response. Otherwise if the player collided with the bottom of the crate tile, it’s top is now above the crate’s bottom. Then when we run collide() the collide_top() fires first and places the player on top of the tile. To the user it would appear as if the player went straight through the bottom of the crate and landed on top. This negative effect is known as “tunneling”. Therefore, establishing player direction gives us a better representation of whats happening. 
 You can see how that when writing a baddy_collision_detection() function it would be very similar to this only we can modify collide_top() to kill the baddy and all other collides to kill the player on contact.
 
+```
 
+  function baddyCollideTopMortal(player, bad){
+
+    if (player.getBottom() > bad.getTop() && player.getOldBottom() <= bad.getTop()){
+      
+        player.setBottom(bad.getTop() - 0.01);
+        
+        player.y_velocity = -27;
+        player.jumping = false;
+        let dead_index = currentGame.alive_baddies.indexOf(bad);
+        currentGame.alive_baddies.splice(dead_index, 1);
+        return true;
+    } return false;
+  }
+  
+  function baddyCollideLeft(player, bad){
+  
+    if (player.getRight() > bad.getLeft() && player.getOldRight() <= bad.getLeft()){
+        player.setRight(bad.getLeft() - 1);
+        player.x_velocity = 0;
+        player_dead = true;
+        return true;
+    } return false;
+    
+  }
+```
 
 ## **Efficiency**
 
