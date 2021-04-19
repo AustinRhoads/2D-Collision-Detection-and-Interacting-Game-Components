@@ -19,7 +19,7 @@ function aabb(a, b){
 }
 ```
 
-Let's plug in the real values for mario and his coin...
+Let's plug in the real values for mario and his coin, represented by the yellow and red polygons...
 
 ```markdown
 function aabb(yellow, red){
