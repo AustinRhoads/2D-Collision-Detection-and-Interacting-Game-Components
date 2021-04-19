@@ -1,7 +1,7 @@
 # **2D Collision Detection and Interacting Game Components**
 
 I wanted to make a game that would operate and feel like Super Mario World out of JavaScript. The physics and movement of the characters on the screen in these games are simple and elegant. 
-The most basic way to approach this type of 2d collision detection is to utilize a concept known as **Axis-aligned bounding box. 
+The most basic way to approach this type of 2d collision detection is to utilize a concept known as **Axis-aligned bounding box**. 
 
 **Axis-aligned bounding box**, or **AABB**, detects if two non-rotational polygons are overlapping each other. Typically **AABB** algorithms run something like this:
 
