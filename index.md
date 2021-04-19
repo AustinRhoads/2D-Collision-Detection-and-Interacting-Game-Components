@@ -13,7 +13,7 @@ We then compare X and Y positions along with width and height to see if they are
 
 ```function aabb(player, b){
 
-}```
+}
 
 
  
