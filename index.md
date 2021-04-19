@@ -97,9 +97,11 @@ Finally, at the end of each game_loop() cycle the engine draws onto the canvas t
 
 ## **Interaction and Behavior**
 
+
  Whether its the sky or earth, my player is always colliding with at least one tile in every single frame so there is no need to run the aabb() function. My collision_detection() function first locates the position of each corner of the player. Then, it retrieves the type of tile that corner is colliding with. Then it passes in the tile’s type and the corner’s x and y position into the collide() function. 
 
 ![Image](collide_function.png)
+![Image](collide.png)
 
 
 
