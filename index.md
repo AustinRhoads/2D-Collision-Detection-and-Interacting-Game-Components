@@ -62,16 +62,16 @@ Without going into too much detail here the tile map is represented by an array 
 const  DEFAULT_MAP = [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
                        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
                        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
-                       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
-                       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
-                       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+                       0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 
+                       0, 0, 0, 0, 0, 0, 2, 0, 2, 0, 0, 0, 
+                       0, 0, 0, 0, 0, 2, 2, 0, 2, 2, 0, 0, 
                        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1  
                        ]
 ```
 
 ...appears as:
 
-[image of default map]
+![Image](default_map_img.png)
 
 The game_loop() function is the game’s engine which updates the players position and then calls upon itself at the end of each cycle. Each loop or “cycle” first moves the player according to the user’s input, then moves each “baddy” according to their own behavior. Next the cycle runs the collision_detection() functions which update the player’s and “baddies” x and y position in response to any collisions detected. Finally, at the end of each game_loop() cycle the engine draws onto the canvas the next animation frame based on the outcomes of the previous steps.
 
