@@ -46,7 +46,7 @@ If the player collides with any side of this tile it’s position stays outside 
 
 3: sky_island
 
-![Image](sky_island_1.ong)
+![Image](sky_island_1.png)
 
 If the player lands on top of the tile, the player’s vertical movement stops and it rests on top of the tile, otherwise it can go through this tile in every other direction.
 
