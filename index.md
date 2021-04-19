@@ -32,7 +32,7 @@ function aabb(yellow, red){
 ```
 
  
-This algorithm has a robust range of applications. It can be used to detect if your player is over a collectible item, touching a bad guy or at the door at the end of the game. Once a collision is detected depending on the game components involved there are many specific desired outcomes. If the player lands on a walk-able ledge it doesn’t fall through it. If she hits a wall she wont be able to pass through it. If the player hops on top of the bad guy, the bad guy dies. This is how I applied AABB collision detection to my project and got these types of interactions.
+This algorithm has a robust range of applications. It can be used to detect if your player is over a collectible item, touching a bad guy or at the door at the end of the game. Once a collision is detected depending on the game components involved there are many specific desired outcomes. If the player falls on top of a ledge it we want it to stop falling. If she hits a wall she can't pass through it. If the player hops on top of the bad guy, the bad guy dies. This is how I applied AABB collision detection to my project and got these types of interactions.
 
 
 ## **Game Components**
@@ -88,11 +88,7 @@ const  DEFAULT_MAP = [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 
 ![Image](default_map_img.png)
 
-
-## **Game Loop**
-The game_loop() function is the game’s engine which updates the players position and then calls upon itself at the end of each cycle. Each loop or “cycle” first moves the player according to the user’s input, then moves each “baddy” according to their own behavior. 
-Next the cycle runs the collision_detection() functions which update the player’s and “baddies” x and y position in response to any collisions detected. 
-Finally, at the end of each game_loop() cycle the engine draws onto the canvas the next animation frame based on the outcomes of the previous steps.
+game loop was here
 
 
 ## **Interaction and Behavior**
@@ -110,11 +106,11 @@ The collide() function uses a switch statement to select the appropriate block o
 ![Image](collide_top.png)
 
 
-///explain the collide function and how it utilizes the getOldLeft() and so on...//
+
 
 In these different tile collide functions you can see the older position of the player is compared to the tile as well. This allows you to establish the direction the player is going. The function needs to know what direction the player is going in order to have the correct response. Otherwise if the player collided with the bottom of the crate tile, it’s top is now above the crate’s bottom. Then when we run collide() the collide_top() fires first and places the player on top of the tile. To the user it would appear as if the player went straight through the bottom of the crate and landed on top. This negative effect is known as “tunneling”. Therefore, establishing player direction gives us a better representation of whats happening. 
 
-You can imagine now that when writing a baddy_collision_detection() function it would be very similar to this only we can modify collide_top() to kill the baddy and all other collides to kill the player on contact.
+baddies collide was here
 
 
 ## **Efficiency**
