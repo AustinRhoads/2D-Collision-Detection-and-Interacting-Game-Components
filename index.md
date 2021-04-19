@@ -29,24 +29,27 @@ The entire map is made up of just four tiles types. 80 by 80 pixels in dimension
 
 0: sky -
 
-		[sky image]
+		![Image](sky_block_1.png)
 
-		The player moves freely through this tile.
+The player moves freely through this tile.
+
 1: earth -
 
-		[earth image]
+		![Image](earth_1.png)
 
-		If the player lands on top of the tile, the player’s vertical movement stops and it rests on 			top of the tile, otherwise it can go through this tile in every other direction.
+If the player lands on top of the tile, the player’s vertical movement stops and it rests on top of the tile, otherwise it can go through this tile in every other direction.
+
 2: crate -
 
-		[crate image]
+		![Image](crate_1.png)
 
-		If the player collides with any side of this tile it’s position stays outside of this tile.
+If the player collides with any side of this tile it’s position stays outside of this tile.
+
 3: sky_island -
 
-		[sky island image]
+		![Image](sky_island_1.ong)
 
-		If the player lands on top of the tile, the player’s vertical movement stops and it rests on 			top of the tile, otherwise it can go through this tile in every other direction.
+If the player lands on top of the tile, the player’s vertical movement stops and it rests on top of the tile, otherwise it can go through this tile in every other direction.
 
 Without going into too much detail here the tile map is represented by an array of tile types in their assigned column and row, such that the array:
 
