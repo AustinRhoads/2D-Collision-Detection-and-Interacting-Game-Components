@@ -11,9 +11,9 @@ We have two polygons:
 
 We then compare X and Y positions along with width and height to see if they are overlapping.
 
-`function aabb(player, b){
+```function aabb(player, b){
 
-}`
+}```
 
 
  
