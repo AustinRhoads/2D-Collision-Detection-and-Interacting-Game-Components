@@ -88,7 +88,6 @@ const  DEFAULT_MAP = [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 
 ![Image](default_map_img.png)
 
-game loop was here
 
 
 ## **Interaction and Behavior**
@@ -109,8 +108,8 @@ The collide() function uses a switch statement to select the appropriate block o
 
 
 In these different tile collide functions you can see the older position of the player is compared to the tile as well. This allows you to establish the direction the player is going. The function needs to know what direction the player is going in order to have the correct response. Otherwise if the player collided with the bottom of the crate tile, it’s top is now above the crate’s bottom. Then when we run collide() the collide_top() fires first and places the player on top of the tile. To the user it would appear as if the player went straight through the bottom of the crate and landed on top. This negative effect is known as “tunneling”. Therefore, establishing player direction gives us a better representation of whats happening. 
+You can see how that when writing a baddy_collision_detection() function it would be very similar to this only we can modify collide_top() to kill the baddy and all other collides to kill the player on contact.
 
-baddies collide was here
 
 
 ## **Efficiency**
