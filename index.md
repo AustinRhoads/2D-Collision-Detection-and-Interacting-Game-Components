@@ -24,8 +24,9 @@ function aabb(player, b){
 
 My project was a simple tile-based 2d platform game consisting of the player object, a 32 by 32 pixel red square named “Cubio”, three types of “baddies” and the tile map of the game’s world. 
 
-[image of the gang]
+![Image](gang.png)
 
+### **Tiles**
 The entire map is made up of just four tiles types. 80 by 80 pixels in dimension, each has it’s own numerical value and specified sets of rules that determine how the player interacts with them upon collision.
 
 0: sky 
@@ -51,6 +52,9 @@ If the player collides with any side of this tile it’s position stays outside 
 ![Image](sky_island_1.png)
 
 If the player lands on top of the tile, the player’s vertical movement stops and it rests on top of the tile, otherwise it can go through this tile in every other direction.
+
+
+### **Map**
 
 Without going into too much detail here the tile map is represented by an array of tile types in their assigned column and row, such that the array:
 
