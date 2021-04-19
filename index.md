@@ -19,8 +19,20 @@ function aabb(a, b){
 }
 ```
 
+Let's plug in the real values for mario and his coin...
+
+```markdown
+function aabb(yellow, red){
+  return 120 < 280
+  && 240 > 200
+  && 0 < 280 
+  && 240 > 200;
+}
+//collision detected!!!
+```
+
  
-This algorithm has a robust range of applications. It can be used to detect if your player is over a collectible item, touching a bad guy or at the door at the end of the game. Once a collision is detected depending on the game components involved there are many specific desired outcomes. If the player lands on a walk-able ledge it doesn’t fall through it. If she hits a wall she wont be able to pass through it. If the player hops on top of the bad guy, the bad guy dies. This is how I applied AABB collision detection to my project and got these types of interactions.
+The function returns true when a collision has been detected. This algorithm has a robust range of applications. It can be used to detect if your player is over a collectible item, touching a bad guy or at the door at the end of the game. Once a collision is detected depending on the game components involved there are many specific desired outcomes. If the player lands on a walk-able ledge it doesn’t fall through it. If she hits a wall she wont be able to pass through it. If the player hops on top of the bad guy, the bad guy dies. This is how I applied AABB collision detection to my project and got these types of interactions.
 
 
 ## **Game Components**
