@@ -26,27 +26,27 @@ My project was a simple tile-based 2d platform game consisting of the player obj
 
 The entire map is made up of just four tiles types. 80 by 80 pixels in dimension, each has it’s own numerical value and specified sets of rules that determine how the player interacts with them upon collision.
 
-0: sky -
+0: sky 
 
-		![Image](sky_block_1.png)
+![Image](sky_block_1.png)
 
 The player moves freely through this tile.
 
-1: earth -
+1: earth
 
-		![Image](earth_1.png)
+![Image](earth_1.png)
 
 If the player lands on top of the tile, the player’s vertical movement stops and it rests on top of the tile, otherwise it can go through this tile in every other direction.
 
-2: crate -
+2: crate
 
-		![Image](crate_1.png)
+![Image](crate_1.png)
 
 If the player collides with any side of this tile it’s position stays outside of this tile.
 
-3: sky_island -
+3: sky_island
 
-		![Image](sky_island_1.ong)
+![Image](sky_island_1.ong)
 
 If the player lands on top of the tile, the player’s vertical movement stops and it rests on top of the tile, otherwise it can go through this tile in every other direction.
 
