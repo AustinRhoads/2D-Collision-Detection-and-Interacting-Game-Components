@@ -107,7 +107,7 @@ Finally, at the end of each game_loop() cycle the engine draws onto the canvas t
 
 The collide() function uses a switch statement to select the appropriate block of code to run depending on the tile type. As you can see type “0” (sky) has no effect and type “2” (crate) collides with all four sides. In case your are wondering why I’ve defined these points twice in collision_detection(), it’s because each time I call collide() it has the potential to move the player. So every point has to be redefined each time after I call collide(). 
 
-[collide_top() code image]
+![Image](collide_top.png)
 
 
 ///explain the collide function and how it utilizes the getOldLeft() and so on...//
