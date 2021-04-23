@@ -93,7 +93,7 @@ const  DEFAULT_MAP = [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 ## **Interaction and Behavior**
 
 
- Whether its the sky or earth, my player is always colliding with at least one tile in every single frame so there is no need to run the aabb() function. My collision_detection() function first locates the position of each corner of the player. Then, it retrieves the type of tile that corner is colliding with. Then it passes in the tile’s type and the corner’s x and y position into the collide() function. 
+ Whether its the sky or earth, my player is always colliding with at least one tile in every single frame so there is no need to run the **aabb()** function. My collision_detection() function first locates the position of each corner of the player. Then, it retrieves the type of tile that corner is colliding with. Then it passes in the tile’s type and the corner’s x and y position into the collide() function. 
 
 ![Image](collide_function.png)
 ![Image](collide.png)
@@ -137,9 +137,9 @@ You can see how that when writing a baddy_collision_detection() function it woul
   }
 ```
 
-## **Efficiency**
+## **Efficiency with AABB, Coins, and Baddies**
 
-Once all of you tiles, coins and baddies are interacting with you player correctly you’ll notice that running a collision test on every coin and every baddy at every cycle of you engine loop is very costly and unnecessary. This is where you separate the process of test for collision into two phases, broad and narrow.
+Once all of you tiles, coins and baddies are interacting with you player correctly you’ll notice that running a collision test on every coin and every baddy at every cycle of you engine loop is very costly and unnecessary. This is where you separate the process of test for collision into two phases, **broad** and **narrow**.
 
 
 ### **Broad**
@@ -148,7 +148,7 @@ In the broad phase, create an array of near entities(coins, baddies). Iterate th
 
 ### **Narrow**
 
-Once a much smaller list of near objects is created we then iterate over each testing for collision with the AABB() function and/or run appropriate blocks of code.
+Once a much smaller list of near objects is created we then iterate over each testing for collision with the **aabb()** function and/or run appropriate blocks of code.
 
 
 Collision detection is the mechanism that brings your game to life. Each step is easy to understand and can be re-imagined many different ways, but once implemented is powerful. Happy coding!
