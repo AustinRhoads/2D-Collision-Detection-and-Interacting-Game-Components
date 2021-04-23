@@ -32,7 +32,7 @@ function aabb(yellow, red){
 ```
 
  
-This algorithm has a robust range of applications. It can be used to detect if your player is over a collectible item, touching a bad guy or at the door at the end of the game. Once a collision is detected depending on the game components involved there are many specific desired outcomes. If the player falls on top of a ledge it we want it to stop falling. If she hits a wall she can't pass through it. If the player hops on top of the bad guy, the bad guy dies. This is how I applied AABB collision detection to my project and got these types of interactions.
+This algorithm has a robust range of applications. It can be used to detect if your player is over a collectible item, touching a bad guy or at the door at the end of the game. Once a collision is detected depending on the game components involved there are many specific desired outcomes. If the player falls on top of a ledge we want it to stop falling. If she hits a wall she can't pass through it. If the player hops on top of the bad guy, the bad guy dies. This is how I applied AABB collision detection to my project and got these types of interactions.
 
 
 ## **Game Components**
@@ -148,7 +148,7 @@ In the broad phase, create an array of near entities(coins, baddies). Iterate th
 
 ### **Narrow**
 
-Once a much smaller list of near objects is created we then iterate over each testing for collision and/or run appropriate blocks of code.
+Once a much smaller list of near objects is created we then iterate over each testing for collision with the AABB() function and/or run appropriate blocks of code.
 
 
 Collision detection is the mechanism that brings your game to life. Each step is easy to understand and can be re-imagined many different ways, but once implemented is powerful. Happy coding!
